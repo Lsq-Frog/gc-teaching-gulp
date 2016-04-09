@@ -49,6 +49,7 @@
 .flexslider .slides > li {
   height: 100%;
   overflow: hidden;
+  overflow-y: scroll;
   display: none;
   -webkit-backface-visibility: hidden;
 }

@@ -1,79 +1,354 @@
-html{
-  -ms-touch-action: none; /* 阻止windows Phone 的默认触摸事件 */
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+	background-color: #E7E7E7;
 }
-@media (min-width: 768px) {
-  .header {
-    height: 58px;
-    h1 {
-      line-height: 58px;
-    }
-  }
-  .row {
-    margin-top: 58px;
-    overflow: hidden;
-  }
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-@media (max-width: 767px) {
-  .header {
-    height: 48px;
-    h1 {
-      line-height: 48px;
-    }
-  }
-  .row {
-    margin-top: 48px;
-    margin-bottom: 20px;
-    overflow-y: scroll;
-    .img-info {
-      max-height: 40%;
-    }
-    .center-info {
-      height: 60%;
-    }
-  }
-}
-
 //header
-.header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background-color: #555251;
-  z-index: 99999;
-  h1 {
-    margin: 0;
-    font-family: "微软雅黑";
-    font-size: 24px;
-    color: #ccc;
-    font-weight: 400;
-    text-align: center;
-  }
+.header-pc {
+	overflow: hidden;
+	background-color: #434343;
+	height: 80px;
+	.logo {
+		float: left;
+		overflow: hidden;
+		margin-top: 15px;
+	}
+	.serach {
+		position: relative;
+		float: right;
+		.serach-input {
+			margin-top: 15px;
+			padding: 0 15px;
+			border: 0;
+			width: 315px;
+			height: 30px;
+			border-radius: 15px;
+			outline: none;
+		}
+		.serach-btn {
+			position: absolute;
+			top: 20px;
+			right: 10px;
+			display: inline-block;
+			width: 20px;
+			height: 21px;
+			background: data-uri('../images/serach-btn.png') center no-repeat;
+			cursor: pointer;
+		}
+		.keywords {
+			padding: 0 15px;
+			line-height: 30px;
+			color: #fff;
+			span {
+				display: inline-block;
+				font-size: 12px;
+				line-height: 30px;
+				padding: 0 10px;
+			}
+		}
+	}
+}
+.header-m {
+	overflow: hidden;
+	background-color: #0091E1;
+	height: 4em;
+	.logo {
+		float: left;
+		overflow: hidden;
+		margin-left: 5%;
+		width: 8em;
+		img {
+			margin-top: 1.2em;
+			width: 100%;
+			max-height: 2em;
+		}
+	}
+	.serach {
+		float: right;
+		width: 65%;
+		height: 4em;
+		.serach-input {
+			float: right;
+			position: relative;
+			overflow: hidden;
+			display: inline-block;
+			width: 70%;
+			height: 4em;
+			input {
+				margin-top: .8em;
+				margin-right: 1em;
+				padding-left: 5%;
+				padding-right: 25%;
+				border: 0;
+				width: 65%;
+				height: 30px;
+				border-radius: 15px;
+				outline: none;
+			}
+			.serach-btn {
+				position: absolute;
+				top: 1.3em;
+				right: 10%;
+				display: inline-block;
+				width: 20px;
+				height: 21px;
+				background: data-uri('../images/serach-btn.png') center no-repeat;
+				cursor: pointer;
+			}
+		}
+	}
 }
 //header end
 
-#pic_wrap {
-  overflow: hidden;
-  max-width: 980px;
-  margin: auto;
+//container
+.container {
+	.top {
+		margin-top: 15px;
+		width: 100%;
+		height: 130px;
+		background-color: #fff;
+		border: 1px solid #D2D2D2;
+		.info-left {
+			float: left;
+			padding: 23px 40px;
+			width: 672px;
+			p {
+				float: left;
+				display: inline-block;
+				width: 100%;
+				padding-left: 40px;
+				line-height: 30px;
+				font-size: 14px;
+				color: #8B8B8B;
+				background: data-uri('../images/icon1.png') left center no-repeat;
+			}
+			b {
+				display: inline-block;
+				padding: 20px 0 5px;
+				line-height: 30px;
+				font-size: 14px;
+				span {
+					margin: 0 10px;
+					display: inline-block;
+					line-height: 26px;
+					font-weight: normal;
+					color: #FF0000;
+					border-bottom: 2px solid #FF0000;
+					cursor: pointer;
+				}
+			}
+		}
+		.info-right {
+			float: right;
+			padding: 23px 40px;
+			width: 268px;
+			h2 {
+				font-family: Arial;
+				font-size: 30px;
+				font-weight: bold;
+				color: #AEC6D0;
+			}
+			p {
+				font-family: Arial;
+				font-size: 43px;
+				font-weight: bold;
+				color: #3498DB;
+				span {
+					font-family: "Microsoft YaHei UI";
+					font-size: 16px;
+					font-weight: normal;
+					color: #AEC6D0;
+				}
+			}
+		}
+	}
+	.title-m {
+		position: relative;
+		padding: 0 3em;
+		text-align: center;
+		font-size: 1.6em;
+		font-weight: bold;
+		line-height: 3em;
+		color: #3F5C74;
+		background-color: #fff;
+		.list {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			width: 3em;
+			height: 3em;
+			background: data-uri('../images/list.png') center no-repeat;
+			cursor: pointer;
+		}
+		.next {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: inline-block;
+			width: 3em;
+			height: 3em;
+			background: data-uri('../images/next.png') center no-repeat;
+			cursor: pointer;
+		}
+	}
+	.content {
+		overflow: hidden;
+		margin-top: 15px;
+		.left {
+			float: left;
+			padding: 10px 40px;
+			width: 672px;
+			background-color: #fff;
+			border: 1px solid #D2D2D2;
+			.title-pc {
+				font-size: 20px;
+				font-weight: bold;
+				line-height: 80px;
+				color: #3F5C74;
+				border-bottom: 1px solid #C6C6C6;
+				span {
+					float: right;
+					margin: 30px 0;
+					display: inline-block;
+					padding-left: 25px;
+					font-size: 16px;
+					font-weight: normal;
+					line-height: 20px;
+					color: #3F5C74;
+					background: data-uri('../images/icon2.png') left center no-repeat;
+				}
+			}
+			.step {
+				text-align: center;
+				h3 {
+					margin: 1em 0;
+					padding-left: 20px;
+					border-left: 3px solid #80D2FF;
+					font-size: 1.4em;
+					color: #6A6A6A;
+					text-align: left;
+					line-height: 18px;
+					code {
+						font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+						padding: 2px 4px;
+						font-size: 90%;
+						color: #c7254e;
+						background-color: #f9f2f4;
+						border-radius: 4px;
+					}
+				}
+				pre {
+					text-align: left;
+					display: block;
+					padding: 9.5px;
+					margin: 0 0 10px;
+					font-size: 13px;
+					line-height: 1.42857143;
+					color: #333;
+					word-break: break-all;
+					word-wrap: break-word;
+					background-color: #f5f5f5;
+					border: 1px solid #ccc;
+					border-radius: 4px;
+					code {
+						padding: 0;
+						font-size: inherit;
+						color: inherit;
+						white-space: pre-wrap;
+						background-color: transparent;
+						border-radius: 0;
+					}
+				}
+				img {
+					max-width: 100%;
+					margin: 1em auto;
+				}
+			}
+		}
+		.right {
+			float: right;
+			width: 248px;
+			margin-left: 15px;
+			padding: 23px 40px;
+			background-color: #fff;
+			border: 1px solid #D2D2D2;
+			.teach-option {
+				margin-bottom: 35px;
+				width: 100%;
+				overflow: hidden;
+				cursor: pointer;
+				img {
+					float: left;
+					width: 100px;
+					height: 75px;
+				}
+				.info {
+					float: right;
+					overflow: hidden;
+					width: 130px;
+					height: 75px;
+					h3 {
+						width: 100%;
+					}
+					p {
+						margin-top: 10px;
+						line-height: 16px;
+					}
+				}
+			}
+		}
+	}
 }
-.caption {
-  padding: 0 15px;
-  h3 {
-    font-size: 24px;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-  }
-  p {
-    font-size: 14px;
-    color: #fff;
-  }
+//container end
+
+.footer {
+	height: 180px;
+}
+
+@media (min-width: 769px) {
+	.header-pc, .container .top, .container .content .right, .container .content .title-pc, .footer {
+		display: block;
+	}
+	.container .content .right {
+		width: 248px;
+	}
+	.header-m, .container .title-m {
+		display: none;
+	}
+	.container .content {
+		margin-top: 15px;
+	}
+	.w1100 {
+		width: 1100px;
+	}
+	.container .content .left {
+
+	}
+}
+@media (max-width: 768px) {
+	.header-pc, .container .top, .container .content .right, .container .content .title-pc, .footer {
+		display: none;
+	}
+	.container .content .right {
+		width: 80%;
+		padding: 2em 10%;
+	}
+	.header-m, .container .title-m {
+		display: block;
+	}
+	.container .content {
+		margin-top: 0;
+	}
+	.w1100 {
+		width: 100%;
+	}
+	.container .content .left {
+		width: 80%;
+		padding: 0 10% 2em;
+	}
 }
